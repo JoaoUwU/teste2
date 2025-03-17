@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charada Famous</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 40px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        h3 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .clue {
+            font-size: 20px;
+            margin: 20px 0;
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+        }
+        button {
+            padding: 12px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #successMessage {
+            font-size: 20px;
+            color: #27ae60;
+            display: none;
+        }
+        #nextPageBtn {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Charada Famous!</h1>
+
+
+    <div class="clue">
+        <h3>PRIMEIRA DICA:</h3>
+        <p>Com estilo e consciência, sou amiga do meio ambiente,<br>
+        A marca Malwee é conhecida por ser sustentável e presente.<br>
+        Com peças confortáveis e de beleza sem igual,<br>
+        Quem sou eu, que sou um ícone global, além de cuidar do planeta com o toque essencial?</p>
+    </div>
+
+
+    <div class="clue">
+        <h3>SEGUNDA DICA:</h3>
+        <p>Se quiser saber quem sou, procure angels mais famosas da Victoria's Secret.</p>
+    </div>
+
+
+    <h3>Qual é o nome da famosa que estamos falando?</h3>
+    <input type="text" id="answer" placeholder="Digite a resposta aqui...">
+    <button onclick="checkAnswer()">Enviar Resposta</button>
+
+
+    <div id="successMessage">Parabéns! Você acertou! <br> Gisele Caroline Bündchen!</div>
+
+
+    <button id="nextPageBtn" onclick="nextPage()">Próxima Página</button>
+
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.trim().toLowerCase();
+            const successMessage = document.getElementById('successMessage');
+            const nextPageBtn = document.getElementById('nextPageBtn');
+
+
+            // Resposta correta (Gisele Bündchen)
+            if (answer === "gisele bündchen" || answer === "gisele caroline bündchen") {
+                successMessage.style.display = 'block';
+                nextPageBtn.style.display = 'block';
+            } else {
+                successMessage.style.display = 'none';
+                nextPageBtn.style.display = 'none';
+                alert("Resposta incorreta! Tente novamente.");
+            }
+        }
+
+
+        function nextPage() {
+            window.location.href = '4index.html'; // Substitua com a URL da próxima página
+        }
+    </script>
+
+
+</body>
+</html>
+
+
